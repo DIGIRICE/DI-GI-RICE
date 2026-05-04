@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>清优308 低GI健康大米 | 大学生商业大赛展示</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --g50:#EAF3DE;--g100:#C0DD97;--g200:#97C459;--g400:#639922;--g600:#3B6D11;--g800:#27500A;--g900:#173404;
+  --t50:#E1F5EE;--t100:#9FE1CB;--t400:#1D9E75;--t600:#0F6E56;
+  --a50:#FAEEDA;--a100:#FAC775;--a200:#EF9F27;--a400:#BA7517;
+  --gr50:#F1EFE8;--gr100:#D3D1C7;--gr400:#888780;--gr600:#5F5E5A;--gr800:#444441;--gr900:#2C2C2A;
+  --rmd:10px;--rlg:16px;--rxl:22px;
+}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f4ef;color:var(--gr900);line-height:1.7;font-size:15px;}
+
+/* ===== NAV ===== */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);border-bottom:.5px solid #d8d5c6;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
+.nav-brand{display:flex;align-items:center;gap:10px;}
+.nav-logo{width:32px;height:32px;background:var(--g600);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;}
+.nav-name{font-size:14px;font-weight:500;color:var(--g800);}
+.nav-name span{font-size:12px;color:var(--gr600);font-weight:400;margin-left:4px;}
+.nav-links{display:flex;gap:22px;list-style:none;}
+.nav-links a{font-size:13px;color:var(--gr600);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--g600);}
+.nav-badge{font-size:11px;background:var(--g50);color:var(--g600);border:.5px solid var(--g200);padding:3px 10px;border-radius:20px;font-weight:500;}
+
+/* ===== HERO ===== */
+.hero{min-height:94vh;background:linear-gradient(145deg,#eef7e4 0%,#e2f2d5 45%,#cce8c6 100%);display:flex;align-items:center;padding:80px 5% 60px;position:relative;overflow:hidden;}
+.hero-ring1{position:absolute;top:-100px;right:-60px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(99,153,34,.12);}
+.hero-ring2{position:absolute;top:-60px;right:-20px;width:360px;height:360px;border-radius:50%;background:rgba(99,153,34,.05);}
+.hero-ring3{position:absolute;bottom:-80px;left:5%;width:280px;height:280px;border-radius:50%;background:rgba(29,158,117,.06);}
+.hero-inner{max-width:1120px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.7);border:.5px solid var(--g200);color:var(--g600);font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:22px;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--g400);}
+.hero h1{font-size:clamp(30px,4.5vw,50px);font-weight:600;color:var(--g900);line-height:1.22;margin-bottom:14px;letter-spacing:-.5px;}
+.hero h1 em{font-style:normal;color:var(--g600);}
+.hero-sub{font-size:15px;color:var(--gr600);line-height:1.7;margin-bottom:6px;}
+.hero-sub strong{color:var(--g600);font-weight:500;}
+.hero-tagline{margin-top:20px;font-size:14px;color:var(--g800);font-weight:500;padding:12px 18px;background:rgba(255,255,255,.65);border-left:3px solid var(--g400);border-radius:0 var(--rmd) var(--rmd) 0;}
+.hero-ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;}
+.btn-g{background:var(--g600);color:white;border:none;padding:12px 26px;border-radius:var(--rmd);font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s;}
+.btn-g:hover{background:var(--g800);}
+.btn-o{background:transparent;color:var(--g600);border:1px solid var(--g400);padding:12px 26px;border-radius:var(--rmd);font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;}
+.btn-o:hover{background:var(--g50);}
+/* hero right */
+.hero-right{display:flex;flex-direction:column;gap:14px;}
+.hero-product-card{background:white;border-radius:var(--rxl);padding:30px;border:.5px solid #cee4b0;position:relative;}
+.hpc-top{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;}
+.hpc-icon{width:60px;height:60px;background:var(--g50);border-radius:var(--rlg);display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
+.hpc-name{font-size:18px;font-weight:600;color:var(--g900);margin-bottom:4px;}
+.hpc-sub{font-size:13px;color:var(--gr600);}
+.hpc-gi-badge{position:absolute;top:20px;right:20px;background:var(--g600);color:white;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;}
+.hpc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.hpc-stat{background:var(--g50);border-radius:var(--rmd);padding:12px 10px;text-align:center;}
+.hpc-stat-num{font-size:20px;font-weight:600;color:var(--g600);line-height:1;}
+.hpc-stat-label{font-size:11px;color:var(--gr600);margin-top:4px;}
+.hero-info-chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{display:inline-flex;align-items:center;gap:5px;background:white;border:.5px solid #d0e4b0;color:var(--g800);font-size:12px;padding:6px 12px;border-radius:20px;}
+.chip-dot{width:5px;height:5px;border-radius:50%;background:var(--g400);}
+
+/* ===== SECTIONS ===== */
+section{padding:80px 5%;}
+.container{max-width:1120px;margin:0 auto;}
+.sec-label{font-size:11px;font-weight:500;color:var(--g600);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;}
+.sec-title{font-size:clamp(20px,2.8vw,30px);font-weight:600;color:var(--gr900);margin-bottom:14px;line-height:1.3;}
+.sec-desc{font-size:15px;color:var(--gr600);max-width:660px;line-height:1.85;margin-bottom:48px;}
+
+/* ===== PROJECT INTRO ===== */
+.intro-section{background:white;}
+.intro-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;}
+.intro-text p{font-size:15px;color:var(--gr600);line-height:1.9;margin-bottom:16px;}
+.intro-hl{background:var(--g50);border-left:3px solid var(--g400);padding:14px 18px;border-radius:0 var(--rmd) var(--rmd) 0;font-size:13px;color:var(--g800);font-weight:500;margin-top:8px;}
+.intro-visual{background:var(--gr50);border-radius:var(--rxl);padding:28px;border:.5px solid #dddbc5;}
+.iv-title{font-size:13px;font-weight:500;color:var(--gr800);margin-bottom:18px;}
+.gi-compare{display:flex;flex-direction:column;gap:18px;}
+.gi-row{display:flex;flex-direction:column;gap:6px;}
+.gi-row-label{display:flex;justify-content:space-between;font-size:13px;color:var(--gr600);}
+.gi-row-label b{color:var(--gr900);font-weight:500;}
+.gi-track{height:11px;background:#e5e3d8;border-radius:6px;overflow:hidden;}
+.gi-fill{height:100%;border-radius:6px;}
+.gi-fill.high{background:#e0845a;width:84%;}
+.gi-fill.low{background:var(--g400);width:42%;}
+.gi-note{font-size:11px;color:var(--gr400);margin-top:14px;line-height:1.5;}
+.gi-gi-label{display:inline-block;background:var(--g600);color:white;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;margin-left:6px;}
+.gi-gi-label.bad{background:#c06040;}
+
+/* ===== COMPANY ===== */
+.company-section{background:var(--g50);}
+.company-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.company-card{background:white;border-radius:var(--rlg);padding:28px;border:.5px solid #cce4b0;}
+.cc-icon{font-size:28px;margin-bottom:14px;}
+.cc-title{font-size:15px;font-weight:500;color:var(--g900);margin-bottom:10px;}
+.cc-text{font-size:13px;color:var(--gr600);line-height:1.75;}
+.company-main-card{background:white;border-radius:var(--rxl);padding:32px 36px;border:.5px solid #cce4b0;margin-bottom:28px;}
+.cmc-head{display:flex;align-items:center;gap:18px;margin-bottom:20px;}
+.cmc-logo{width:52px;height:52px;background:var(--g600);border-radius:var(--rlg);display:flex;align-items:center;justify-content:center;color:white;font-size:22px;}
+.cmc-name{font-size:17px;font-weight:500;color:var(--g900);margin-bottom:3px;}
+.cmc-sub{font-size:12px;color:var(--gr600);}
+.cmc-body{font-size:14px;color:var(--gr600);line-height:1.85;}
+.cmc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.cmc-tag{font-size:12px;background:var(--g50);color:var(--g600);border:.5px solid var(--g200);padding:4px 12px;border-radius:20px;}
+.collab-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+.collab-card{background:white;border-radius:var(--rlg);padding:20px;border:.5px solid #cce4b0;text-align:center;}
+.collab-icon{font-size:22px;margin-bottom:10px;}
+.collab-name{font-size:13px;font-weight:500;color:var(--gr800);}
+.collab-role{font-size:12px;color:var(--gr600);margin-top:4px;}
+
+/* ===== PRODUCT ===== */
+.product-section{background:white;}
+.product-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start;}
+.product-left{}
+.product-img-box{background:linear-gradient(150deg,var(--g50),var(--t50));border-radius:var(--rxl);padding:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;border:.5px solid #cce4b8;margin-bottom:20px;}
+.product-rice-icon{font-size:72px;margin-bottom:16px;}
+.product-name-big{font-size:22px;font-weight:600;color:var(--g800);text-align:center;}
+.product-cert{font-size:12px;color:var(--g600);margin-top:6px;text-align:center;}
+.product-gi-big{margin-top:16px;display:flex;align-items:baseline;gap:6px;}
+.product-gi-num{font-size:42px;font-weight:600;color:var(--g600);line-height:1;}
+.product-gi-label{font-size:14px;color:var(--gr600);}
+.product-gi-bar-wrap{width:100%;margin-top:12px;}
+.product-gi-bar-track{height:8px;background:#e0ded4;border-radius:4px;overflow:visible;position:relative;}
+.product-gi-bar-fill{height:100%;border-radius:4px;background:var(--g400);width:42%;}
+.product-gi-bar-marker{position:absolute;top:-4px;left:50%;transform:translateX(-50%);}
+.product-gi-bar-marker-line{width:1px;height:18px;background:var(--a400);margin:0 auto;}
+.product-gi-bar-marker-label{font-size:10px;color:var(--a400);white-space:nowrap;text-align:center;margin-top:2px;}
+.product-right{}
+.product-title{font-size:22px;font-weight:600;color:var(--g900);margin-bottom:6px;}
+.product-subtitle{font-size:13px;color:var(--gr600);margin-bottom:22px;}
+.product-desc{font-size:14px;color:var(--gr600);line-height:1.9;margin-bottom:24px;}
+.product-features{display:flex;flex-direction:column;gap:12px;}
+.pf-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--g50);border-radius:var(--rmd);border:.5px solid #d4e8b2;}
+.pf-icon{width:32px;height:32px;border-radius:8px;background:var(--g600);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;color:white;}
+.pf-content{}
+.pf-title{font-size:13px;font-weight:500;color:var(--g800);margin-bottom:2px;}
+.pf-text{font-size:12px;color:var(--gr600);}
+
+/* ===== SCIENCE ===== */
+.science-section{background:var(--gr50);}
+.sci-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.sci-explain-card{background:white;border-radius:var(--rlg);padding:28px;border:.5px solid #dddbc5;}
+.sci-explain-title{font-size:14px;font-weight:500;color:var(--gr900);margin-bottom:14px;}
+.sci-explain-text{font-size:13px;color:var(--gr600);line-height:1.8;}
+.sci-gi-levels{margin-top:20px;display:flex;flex-direction:column;gap:10px;}
+.sci-level{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:var(--rmd);}
+.sci-level.lo{background:var(--g50);}
+.sci-level.mid{background:#faf3e0;}
+.sci-level.hi{background:#fdf0e8;}
+.sci-level-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.sci-level.lo .sci-level-dot{background:var(--g400);}
+.sci-level.mid .sci-level-dot{background:var(--a200);}
+.sci-level.hi .sci-level-dot{background:#e0704a;}
+.sci-level-label{font-size:12px;font-weight:500;color:var(--gr800);}
+.sci-level-val{font-size:12px;color:var(--gr600);margin-left:auto;}
+.sci-compare-card{background:white;border-radius:var(--rlg);border:.5px solid #dddbc5;overflow:hidden;}
+.sct-header{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--g600);color:white;font-size:13px;font-weight:500;}
+.sct-header div,.sct-row>div{padding:11px 16px;}
+.sct-row{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:.5px solid #eeecde;font-size:13px;color:var(--gr600);}
+.sct-row:nth-child(even){background:var(--gr50);}
+.col-g{color:var(--g600);font-weight:500;}
+.col-b{color:#bf6840;}
+
+/* ===== AUDIENCE ===== */
+.audience-section{background:white;}
+.aud-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.aud-card{border:.5px solid #dddbc5;border-radius:var(--rlg);padding:24px 22px;transition:border-color .2s,transform .2s;}
+.aud-card:hover{border-color:var(--g400);transform:translateY(-2px);}
+.aud-icon{font-size:30px;margin-bottom:12px;}
+.aud-title{font-size:15px;font-weight:500;color:var(--gr900);margin-bottom:8px;}
+.aud-desc{font-size:13px;color:var(--gr600);line-height:1.7;}
+.aud-tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:500;color:var(--g600);background:var(--g50);padding:3px 10px;border-radius:20px;}
+
+/* ===== ADVANTAGES ===== */
+.adv-section{background:var(--g900);color:white;}
+.adv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.adv-card{background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.12);border-radius:var(--rlg);padding:24px 18px;transition:background .2s;}
+.adv-card:hover{background:rgba(255,255,255,.11);}
+.adv-num{font-size:11px;font-weight:500;color:rgba(255,255,255,.4);margin-bottom:12px;}
+.adv-icon-wrap{width:40px;height:40px;background:var(--g400);border-radius:var(--rmd);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px;}
+.adv-title{font-size:13px;font-weight:500;color:white;margin-bottom:8px;}
+.adv-desc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.7;}
+
+/* ===== BASE ===== */
+.base-section{background:var(--t50);}
+.base-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;}
+.base-text p{font-size:14px;color:var(--gr600);line-height:1.85;margin-bottom:14px;}
+.base-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;}
+.bs-item{background:white;border-radius:var(--rlg);padding:18px 14px;text-align:center;border:.5px solid #b8dfd0;}
+.bs-num{font-size:24px;font-weight:600;color:var(--t600);line-height:1;}
+.bs-unit{font-size:13px;color:var(--gr600);margin-top:6px;}
+.base-map-card{background:white;border-radius:var(--rxl);padding:28px;border:.5px solid #b8dfd0;}
+.bmc-title{font-size:13px;font-weight:500;color:var(--gr800);margin-bottom:18px;}
+.base-locations{display:flex;flex-direction:column;gap:10px;}
+.bl-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--t50);border-radius:var(--rmd);}
+.bl-dot{width:8px;height:8px;border-radius:50%;background:var(--t400);flex-shrink:0;}
+.bl-name{font-size:13px;font-weight:500;color:var(--gr800);}
+.bl-note{font-size:12px;color:var(--gr600);margin-left:auto;}
+
+/* ===== FAQ ===== */
+.faq-section{background:var(--gr50);}
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:white;border:.5px solid #dddbc5;border-radius:var(--rlg);overflow:hidden;}
+.faq-q{padding:18px 22px;font-size:14px;font-weight:500;color:var(--gr900);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:background .15s;}
+.faq-q:hover{background:var(--g50);}
+.faq-toggle{width:22px;height:22px;border-radius:50%;background:var(--g50);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s,background .2s;font-size:14px;color:var(--g600);}
+.faq-item.open .faq-toggle{transform:rotate(45deg);background:var(--g400);color:white;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a-inner{padding:0 22px 18px;border-top:.5px solid #eeecde;font-size:13px;color:var(--gr600);line-height:1.8;}
+
+/* ===== TEAM ===== */
+.team-section{background:white;}
+.team-inner{max-width:720px;margin:0 auto;text-align:center;}
+.team-avatars{display:flex;justify-content:center;margin-bottom:24px;}
+.ta{width:46px;height:46px;border-radius:50%;border:2.5px solid white;display:flex;align-items:center;justify-content:center;font-size:18px;margin-left:-10px;}
+.ta:first-child{margin-left:0;}
+.ta1{background:var(--g100);}.ta2{background:var(--t100);}.ta3{background:var(--a50);}.ta4{background:var(--gr100);}
+.team-title{font-size:20px;font-weight:500;color:var(--gr900);margin-bottom:16px;}
+.team-body{font-size:14px;color:var(--gr600);line-height:1.9;max-width:580px;margin:0 auto;}
+.team-quote{margin-top:28px;font-size:17px;font-weight:500;color:var(--g600);line-height:1.5;}
+
+/* ===== FOOTER ===== */
+footer{background:var(--gr900);color:rgba(255,255,255,.45);padding:40px 5%;font-size:12px;line-height:1.9;text-align:center;}
+.footer-brand{font-size:14px;font-weight:500;color:rgba(255,255,255,.8);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.footer-brand-icon{width:24px;height:24px;background:var(--g400);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;}
+.footer-divider{width:40px;height:.5px;background:rgba(255,255,255,.15);margin:14px auto;}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:960px){
+  .hero-inner,.intro-grid,.product-layout,.base-grid,.sci-layout,.company-grid{grid-template-columns:1fr;gap:32px;}
+  .hero-right{display:none;}
+  .adv-grid{grid-template-columns:repeat(2,1fr);}
+  .collab-row{grid-template-columns:1fr 1fr;}
+  .nav-links,.nav-badge{display:none;}
+}
+@media(max-width:600px){
+  .aud-grid{grid-template-columns:1fr;}
+  .adv-grid{grid-template-columns:1fr;}
+  section{padding:60px 4%;}
+  .base-stats,.hpc-stats{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo">🌾</div>
+    <div>
+      <div class="nav-name">清优308 <span>低GI健康大米</span></div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#intro">项目介绍</a></li>
+    <li><a href="#company">合作企业</a></li>
+    <li><a href="#product">产品详情</a></li>
+    <li><a href="#science">低GI科普</a></li>
+    <li><a href="#audience">适合人群</a></li>
+    <li><a href="#faq">常见问题</a></li>
+  </ul>
+  <div class="nav-badge">大赛展示页面</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ring1"></div>
+  <div class="hero-ring2"></div>
+  <div class="hero-ring3"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-dot"></div>
+        大学生商业策划大赛 · 参赛项目展示
+      </div>
+      <h1>低GI健康大米，<br>安心吃饭<em>更轻松</em></h1>
+      <p class="hero-sub"><strong>清优308</strong> · 绿色生态种植 · 院士团队科研 · 健康主食新选择</p>
+      <div class="hero-tagline">守护健康主食，让每一餐都安心、绿色、有品质</div>
+      <div class="hero-ctas">
+        <a href="#product" class="btn-g">了解清优308</a>
+        <a href="#science" class="btn-o">低GI健康科普</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-product-card">
+        <div class="hpc-gi-badge">GI值 46.7</div>
+        <div class="hpc-top">
+          <div class="hpc-icon">🌾</div>
+          <div>
+            <div class="hpc-name">清优308</div>
+            <div class="hpc-sub">院士团队指导 · 福建首个认证低GI稻种</div>
+          </div>
+        </div>
+        <div class="hpc-stats">
+          <div class="hpc-stat">
+            <div class="hpc-stat-num">46.7</div>
+            <div class="hpc-stat-label">GI值</div>
+          </div>
+          <div class="hpc-stat">
+            <div class="hpc-stat-num">≤55</div>
+            <div class="hpc-stat-label">低GI标准</div>
+          </div>
+          <div class="hpc-stat">
+            <div class="hpc-stat-num">2万+</div>
+            <div class="hpc-stat-label">亩种植基地</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-info-chips">
+        <div class="chip"><div class="chip-dot"></div>院士团队联合研发</div>
+        <div class="chip"><div class="chip-dot"></div>绿色生态种植</div>
+        <div class="chip"><div class="chip-dot"></div>全产业链品控</div>
+        <div class="chip"><div class="chip-dot"></div>独占许可认证</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT INTRO -->
+<section class="intro-section" id="intro">
+  <div class="container">
+    <div class="intro-grid reveal">
+      <div class="intro-text">
+        <p class="sec-label">项目介绍</p>
+        <h2 class="sec-title">我们为什么做这件事</h2>
+        <p>我们是大学生商业策划大赛参赛团队，本次项目聚焦大众健康主食需求，联合湖南中健华安农业发展有限公司，为大家带来更适合现代家庭的低GI健康大米。</p>
+        <p>我们希望通过科普与推广，让更多人认识低GI主食，让血糖管理、健康饮食变得更简单、更日常。</p>
+        <div class="intro-hl">本页面仅用于大赛展示与健康知识科普，不涉及商业销售。</div>
+      </div>
+      <div class="intro-visual">
+        <div class="iv-title">GI升糖指数直观对比</div>
+        <div class="gi-compare">
+          <div class="gi-row">
+            <div class="gi-row-label">普通白米饭 <b>GI 约 82 <span class="gi-gi-label bad">高GI</span></b></div>
+            <div class="gi-track"><div class="gi-fill high"></div></div>
+          </div>
+          <div class="gi-row">
+            <div class="gi-row-label">清优308低GI大米 <b>GI 46.7 <span class="gi-gi-label">低GI</span></b></div>
+            <div class="gi-track"><div class="gi-fill low"></div></div>
+          </div>
+        </div>
+        <p class="gi-note">GI（血糖生成指数）：数值越低，食用后血糖上升越平缓。低GI标准为GI≤55。以上数据仅为科普示意，实际以检测报告为准。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section class="company-section" id="company">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">合作企业</p>
+      <h2 class="sec-title">湖南中健华安农业发展有限公司</h2>
+    </div>
+    <div class="company-main-card reveal">
+      <div class="cmc-head">
+        <div class="cmc-logo">🏢</div>
+        <div>
+          <div class="cmc-name">湖南中健华安农业发展有限公司</div>
+          <div class="cmc-sub">专注功能性水稻与营养健康食品研究 · 全产业链企业</div>
+        </div>
+      </div>
+      <div class="cmc-body">湖南中健华安农业发展有限公司是专注功能性水稻与营养健康食品研究的全产业链企业，集科研、种植、生产、加工于一体。企业拥有30余年农业行业经验，以"守护中国饭碗里的健康，让老百姓吃得安心"为使命，坚持绿色种植、科学育种、品质管控，致力于打造中国低GI大米第一品牌。</div>
+      <div class="cmc-tags">
+        <span class="cmc-tag">30余年农业经验</span>
+        <span class="cmc-tag">全产业链覆盖</span>
+        <span class="cmc-tag">科研种植加工一体</span>
+        <span class="cmc-tag">绿色品质管控</span>
+        <span class="cmc-tag">低GI大米专注品牌</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <p style="font-size:13px;font-weight:500;color:var(--gr800);margin-bottom:14px;">科研合作机构</p>
+      <div class="collab-row">
+        <div class="collab-card">
+          <div class="collab-icon">🎓</div>
+          <div class="collab-name">谢华安院士团队</div>
+          <div class="collab-role">品种指导 · 科研背书</div>
+        </div>
+        <div class="collab-card">
+          <div class="collab-icon">🔬</div>
+          <div class="collab-name">福建省农科院水稻研究所</div>
+          <div class="collab-role">品种选育 · 技术支撑</div>
+        </div>
+        <div class="collab-card">
+          <div class="collab-icon">🏫</div>
+          <div class="collab-name">福建农林大学</div>
+          <div class="collab-role">深度合作 · 学术支持</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product-section" id="product">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">产品详情</p>
+      <h2 class="sec-title">清优308 低GI大米</h2>
+    </div>
+    <div class="product-layout reveal">
+      <div class="product-left">
+        <div class="product-img-box">
+          <div class="product-rice-icon">🌾</div>
+          <div class="product-name-big">清优308</div>
+          <div class="product-cert">福建首个权威认证低GI稻种 · 中健华安独占许可</div>
+          <div class="product-gi-big">
+            <span class="product-gi-num">46.7</span>
+            <span class="product-gi-label">GI值（低GI标准 ≤55）</span>
+          </div>
+          <div class="product-gi-bar-wrap">
+            <div class="product-gi-bar-track">
+              <div class="product-gi-bar-fill"></div>
+              <div class="product-gi-bar-marker" style="left:50%">
+                <div class="product-gi-bar-marker-line"></div>
+                <div class="product-gi-bar-marker-label">标准线55</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-right">
+        <div class="product-title">清优308 低升糖杂交水稻</div>
+        <div class="product-subtitle">院士团队指导 · 农科院选育 · 福建首个认证低GI稻种</div>
+        <div class="product-desc">清优308是由院士团队指导、福建省农科院水稻研究所选育的低升糖杂交水稻品种，也是福建省首个通过权威认证的低GI稻种。中健华安拥有该品种全国独占许可权。清优308 GI值为46.7，远低于低GI标准55，升糖更平缓，饱腹感更持久，口感软糯清香，适合长期作为日常主食。</div>
+        <div class="product-features">
+          <div class="pf-item">
+            <div class="pf-icon">📉</div>
+            <div class="pf-content">
+              <div class="pf-title">真正低GI，GI值仅46.7</div>
+              <div class="pf-text">远低于低GI标准值55，升糖更平缓，血糖波动更小</div>
+            </div>
+          </div>
+          <div class="pf-item">
+            <div class="pf-icon">🍚</div>
+            <div class="pf-content">
+              <div class="pf-title">口感软糯清香</div>
+              <div class="pf-text">不粗糙不发柴，和日常大米口感接近，全家都能接受</div>
+            </div>
+          </div>
+          <div class="pf-item">
+            <div class="pf-icon">🌿</div>
+            <div class="pf-content">
+              <div class="pf-title">绿色种植，食用安全</div>
+              <div class="pf-text">产品绿色种植、品质稳定，无多余添加，安心日常食用</div>
+            </div>
+          </div>
+          <div class="pf-item">
+            <div class="pf-icon">🎓</div>
+            <div class="pf-content">
+              <div class="pf-title">权威科研背书</div>
+              <div class="pf-text">院士团队指导 + 农科院选育，科研实力有保障</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE -->
+<section class="science-section" id="science">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">健康知识科普</p>
+      <h2 class="sec-title">什么是低GI大米？</h2>
+      <p class="sec-desc">GI即血糖生成指数，反映食物引起血糖升高的速度。GI≤55属于低GI食物。</p>
+    </div>
+    <div class="sci-layout reveal">
+      <div>
+        <div class="sci-explain-card">
+          <div class="sci-explain-title">GI分级标准</div>
+          <div class="sci-explain-text">GI即血糖生成指数，数值越低，食用后血糖上升越平缓，对身体的负担越小。低GI大米消化更慢、血糖波动更小、饱腹感更强，能有效减轻身体负担，更适合控糖人群、减脂人群、养生家庭长期食用。</div>
+          <div class="sci-gi-levels">
+            <div class="sci-level lo">
+              <div class="sci-level-dot"></div>
+              <div class="sci-level-label">低GI食物</div>
+              <div class="sci-level-val">GI ≤ 55</div>
+            </div>
+            <div class="sci-level mid">
+              <div class="sci-level-dot"></div>
+              <div class="sci-level-label">中GI食物</div>
+              <div class="sci-level-val">GI 56–70</div>
+            </div>
+            <div class="sci-level hi">
+              <div class="sci-level-dot"></div>
+              <div class="sci-level-label">高GI食物</div>
+              <div class="sci-level-val">GI ＞ 70</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sci-compare-card">
+          <div class="sct-header">
+            <div>对比维度</div>
+            <div>普通大米</div>
+            <div>清优308</div>
+          </div>
+          <div class="sct-row"><div>GI值</div><div class="col-b">约82（高GI）</div><div class="col-g">46.7（低GI）</div></div>
+          <div class="sct-row"><div>升糖速度</div><div class="col-b">快，波动大</div><div class="col-g">缓，波动小</div></div>
+          <div class="sct-row"><div>饱腹持久</div><div class="col-b">容易饿</div><div class="col-g">更持久</div></div>
+          <div class="sct-row"><div>口感</div><div>软糯</div><div class="col-g">软糯清香</div></div>
+          <div class="sct-row"><div>科研背书</div><div>—</div><div class="col-g">院士+农科院认证</div></div>
+          <div class="sct-row"><div>适合人群</div><div>普通人群</div><div class="col-g">全人群，控糖更佳</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience-section" id="audience">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">适合人群</p>
+      <h2 class="sec-title">哪些人最适合吃？</h2>
+      <p class="sec-desc">低GI大米不只是"病人食品"——这是一款全家都能受益的日常健康主食。</p>
+    </div>
+    <div class="aud-grid reveal">
+      <div class="aud-card">
+        <div class="aud-icon">👴</div>
+        <div class="aud-title">血糖偏高、需要日常控糖的人群</div>
+        <div class="aud-desc">想吃米饭又担心升糖，清优308升糖平缓，适合长期作为日常主食，吃得安心。</div>
+        <div class="aud-tag">控糖友好</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">🏃</div>
+        <div class="aud-title">减脂健身、控制碳水摄入的年轻人</div>
+        <div class="aud-desc">饱腹感更强，不易饿，让主食不再是减脂的负担，健康补充能量。</div>
+        <div class="aud-tag">减脂友好</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">👨‍👩‍👧</div>
+        <div class="aud-title">注重健康饮食、追求绿色安全主食的家庭</div>
+        <div class="aud-desc">绿色种植、全程品控，全家老小都能放心吃，轻松升级家庭主食质量。</div>
+        <div class="aud-tag">全家皆宜</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">🌿</div>
+        <div class="aud-title">希望改善饮食结构、增强饱腹感的人群</div>
+        <div class="aud-desc">无需大幅改变饮食习惯，用同样的烹饪方式，换一款更健康的主食，简单有效。</div>
+        <div class="aud-tag">日常养生</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="adv-section" id="advantages">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label" style="color:rgba(255,255,255,.45);">核心优势</p>
+      <h2 class="sec-title" style="color:white;">五大核心优势</h2>
+      <p class="sec-desc" style="color:rgba(255,255,255,.5);">科研实力、真正低GI、绿色生态、好吃好用、品质稳定——每一条都落到实处。</p>
+    </div>
+    <div class="adv-grid reveal">
+      <div class="adv-card">
+        <div class="adv-num">01</div>
+        <div class="adv-icon-wrap">🎓</div>
+        <div class="adv-title">科研实力强</div>
+        <div class="adv-desc">院士团队+农科院联合研发，资质权威，科研有保障。</div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-num">02</div>
+        <div class="adv-icon-wrap">📉</div>
+        <div class="adv-title">真正低GI</div>
+        <div class="adv-desc">GI值46.7，远低于低GI标准，平稳升糖，更安心食用。</div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-num">03</div>
+        <div class="adv-icon-wrap">🌿</div>
+        <div class="adv-title">绿色生态</div>
+        <div class="adv-desc">绿色种植、源头管控、健康天然，无多余添加剂。</div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-num">04</div>
+        <div class="adv-icon-wrap">🍚</div>
+        <div class="adv-title">口感更佳</div>
+        <div class="adv-desc">软糯清香、不粗糙，适合全家日常吃，好吃不将就。</div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-num">05</div>
+        <div class="adv-icon-wrap">✅</div>
+        <div class="adv-title">品质稳定</div>
+        <div class="adv-desc">规模化种植、全产业链保障，安全可靠，长期放心食用。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BASE -->
+<section class="base-section" id="base">
+  <div class="container">
+    <div class="base-grid reveal">
+      <div class="base-text">
+        <p class="sec-label">企业实力与绿色种植</p>
+        <h2 class="sec-title">近2万亩绿色生态种植基地</h2>
+        <p>中健华安在福建、湖南、重庆等地建设近2万亩绿色生态种植基地，坚持科学种植、绿色管理、环保生产。从育种、种植到加工、储存，全程严格把控品质，以环保理念推动健康农业发展，助力乡村振兴与绿色食品产业升级。</p>
+        <div class="base-stats">
+          <div class="bs-item">
+            <div class="bs-num">2万+</div>
+            <div class="bs-unit">亩种植基地</div>
+          </div>
+          <div class="bs-item">
+            <div class="bs-num">30+</div>
+            <div class="bs-unit">年行业经验</div>
+          </div>
+          <div class="bs-item">
+            <div class="bs-num">全链</div>
+            <div class="bs-unit">产业链管控</div>
+          </div>
+        </div>
+      </div>
+      <div class="base-map-card">
+        <div class="bmc-title">主要种植基地分布</div>
+        <div class="base-locations">
+          <div class="bl-item">
+            <div class="bl-dot"></div>
+            <div class="bl-name">福建</div>
+            <div class="bl-note">核心产区 · 认证起源地</div>
+          </div>
+          <div class="bl-item">
+            <div class="bl-dot"></div>
+            <div class="bl-name">湖南</div>
+            <div class="bl-note">企业总部所在地</div>
+          </div>
+          <div class="bl-item">
+            <div class="bl-dot"></div>
+            <div class="bl-name">重庆</div>
+            <div class="bl-note">扩展种植基地</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">常见问题</p>
+      <h2 class="sec-title">你最想知道的几个问题</h2>
+      <p class="sec-desc">对低GI大米还有疑问？这里帮你一一解答。</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          低GI大米只有血糖高的人才能吃吗？
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">不是。低GI大米是健康主食，所有人都可以吃，尤其适合控糖、减脂、养生人群。普通人长期食用同样有益于健康饮食习惯的养成。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          和普通大米口感差别大吗？
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">口感软糯清香，接近日常大米，不粗糙、不发柴，全家都能接受，完全可以直接替换家里的普通大米。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          有没有添加剂？
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">纯稻米本身品质，无任何添加剂，绿色天然，安心日常食用。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          需要特殊蒸煮方法吗？
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">和普通大米一样蒸煮即可，简单方便，不需要任何特殊操作，完全适配家庭日常做饭习惯。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          可以替代药物吗？
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">低GI大米是健康主食，不能替代药物，仅作为饮食辅助选择。如有健康问题请遵医嘱，合理搭配日常饮食。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="team-inner reveal">
+      <p class="sec-label" style="text-align:center;">团队初心</p>
+      <div class="team-avatars">
+        <div class="ta ta1">🎓</div>
+        <div class="ta ta2">📊</div>
+        <div class="ta ta3">🌱</div>
+        <div class="ta ta4">💡</div>
+      </div>
+      <h2 class="team-title">以健康、绿色、科普为初心</h2>
+      <p class="team-body">我们以健康、绿色、科普为初心，希望通过本次大赛让更多人了解低GI主食，拥抱更健康的生活方式，用青年力量助力健康中国与绿色农业发展。</p>
+      <div class="team-quote">"让更多人认识低GI主食，<br>让血糖管理、健康饮食变得更简单、更日常。"</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="footer-brand-icon">🌾</div>
+    清优308 低GI健康大米 · 大学生商业策划大赛展示
+  </div>
+  <div class="footer-divider"></div>
+  <p>本页面为大学生商业策划大赛专用展示页面，仅用于健康科普与项目介绍，不代表企业官方宣传，不涉及任何商业销售行为。</p>
+  <p>企业相关信息均为公开可查内容，已做脱敏处理，不泄露任何商业机密。内容仅供学习交流使用。</p>
+</footer>
+
+<script>
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>{
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight=null;
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    const a=item.querySelector('.faq-a');
+    a.style.maxHeight=a.scrollHeight+'px';
+  }
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+</body>
+</html>
